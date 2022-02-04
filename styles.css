@@ -20,16 +20,17 @@ body{
     justify-content: center;
     /*border: rgb(135, 197, 187) solid 2px;*/
     z-index: 3;
-    color:#92BCBF; 
 }
 .header-frame{
     float:left;
     width: 50%;
 }
-.header-frame h1{
+.header-frame a{
     font-size: 50px;
     font-family: Arial;
     padding: 10%;
+    text-decoration: none;
+    color:#92BCBF; 
 }
 nav{
     height:15%;

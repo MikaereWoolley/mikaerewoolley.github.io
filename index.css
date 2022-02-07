@@ -1,0 +1,41 @@
+.content{
+    grid-column: 2;
+    grid-row: 2;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.text{
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 25px;
+    font-family: arial;
+}
+.images{
+    grid-column: 2;
+    grid-row: 1;
+}
+#projects{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    justify-content: center;
+    
+}
+.project{
+    border: rgba(0, 0, 0, 0.24) solid 1px;
+    width:20%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title{
+    width:150px;
+    height:150px;
+    display: 'inline';
+}
+.descript{
+    bottom: 0px;
+}

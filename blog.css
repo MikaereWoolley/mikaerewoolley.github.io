@@ -1,0 +1,34 @@
+.content{
+    grid-column: 2;
+    grid-row: 2/4;
+    display:grid;
+    grid-template-rows: 10% auto auto auto auto;
+}
+.content-title{
+    grid-row:1;
+}
+#posts{
+    grid-row:2/6;
+}
+.post{
+    display:grid;
+    grid-template-columns: 40% 60%;
+}
+img{
+    height: '200px';
+}
+.postText{
+    grid-column:2;
+}
+#postOne{
+    grid-row:2;
+}
+#postTwo{
+    grid-row:3;
+}
+#postThree{
+    grid-row:4; 
+}
+#postFour{
+    grid-row:5;
+}

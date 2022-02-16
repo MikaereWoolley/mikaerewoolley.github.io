@@ -21,15 +21,15 @@
     grid-row: 3/4;
     display: flex;
     justify-content: center;
+    align-items: center;
     
 }
 .project{
     border: rgba(0, 0, 0, 0.24) solid 1px;
-    width:20%;
-    height: 50%;
+    width:80%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 .title{
     width:150px;
@@ -38,4 +38,12 @@
 }
 .descript{
     bottom: 0px;
+}
+#projects button{
+    height: 30px;
+    width: 30px;
+}
+.projectsPicture{
+    height: 100%;
+    width: 35%
 }

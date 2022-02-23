@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass')(require('sass'));
+var clean = require('gulp-clean-css');
 
 gulp.task('html', () => {
     return gulp.src('index.hbs')
@@ -19,6 +20,7 @@ gulp.task('sass', () => {
     .pipe(sass({}, {
         batch: ['./partials/styles']
     }))
+    .pipe(clean())
     .pipe(gulp.dest('./'))
 })
 

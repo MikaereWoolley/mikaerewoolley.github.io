@@ -7,9 +7,6 @@
 .content-title{
     grid-row:1;
 }
-#posts{
-    grid-row:2/6;
-}
 .post{
     display:grid;
     grid-template-columns: 40% 60%;

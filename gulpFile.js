@@ -4,10 +4,11 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass')(require('sass'));
 var clean = require('gulp-clean-css');
 
-gulp.task('html', () => {
-    return gulp.src('index.hbs')
+
+gulp.task('index', () => {
+    return gulp.src('*.hbs')
     .pipe(handlebars({}, {
-        batch: ['./partials']
+        batch: ['./partials/hbs/']
     }))
     .pipe(rename({
         extname: '.html'
@@ -15,10 +16,12 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./'))
 });
 
+
+
 gulp.task('sass', () => {
     return gulp.src('index.scss')
     .pipe(sass({}, {
-        batch: ['./partials/styles']
+        batch: ['./partials/index/styles']
     }))
     .pipe(clean())
     .pipe(gulp.dest('./'))
@@ -26,8 +29,8 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
     console.log('watching');
-    gulp.watch('partials/*.hbs', gulp.series('html'));
+    gulp.watch('partials/hbs/*.hbs', gulp.series('index'));
     gulp.watch('./partials/styles/*.sass', gulp.series('sass'));
 });
 
-gulp.task('default', gulp.series('html', 'sass', 'watch'));
+gulp.task('default', gulp.series('index', 'sass', 'watch'));

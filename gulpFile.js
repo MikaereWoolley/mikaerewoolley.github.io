@@ -5,7 +5,7 @@ var sass = require('gulp-sass')(require('sass'));
 var clean = require('gulp-clean-css');
 
 
-gulp.task('index', () => {
+gulp.task('html', () => {
     return gulp.src('*.hbs')
     .pipe(handlebars({}, {
         batch: ['./partials/hbs/']
@@ -19,9 +19,9 @@ gulp.task('index', () => {
 
 
 gulp.task('sass', () => {
-    return gulp.src('index.scss')
+    return gulp.src('*.scss')
     .pipe(sass({}, {
-        batch: ['./partials/index/styles']
+        batch: ['./partials/styles']
     }))
     .pipe(clean())
     .pipe(gulp.dest('./'))
@@ -29,8 +29,8 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
     console.log('watching');
-    gulp.watch('partials/hbs/*.hbs', gulp.series('index'));
+    gulp.watch('partials/hbs/*.hbs', gulp.series('html'));
     gulp.watch('./partials/styles/*.sass', gulp.series('sass'));
 });
 
-gulp.task('default', gulp.series('index', 'sass', 'watch'));
+gulp.task('default', gulp.series('html', 'sass', 'watch'));

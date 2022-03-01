@@ -29,7 +29,7 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
     console.log('watching');
-    gulp.watch('partials/hbs/*.hbs', gulp.series('index'));
+    gulp.watch('partials/hbs/*.hbs', gulp.series('html'));
     gulp.watch('./partials/styles/*.sass', gulp.series('sass'));
 });
 
